@@ -1,5 +1,7 @@
 package com.wildchap.dao;
 
+import org.apache.ibatis.annotations.Param;
+
 import java.util.Map;
 
 public interface UserDao {
