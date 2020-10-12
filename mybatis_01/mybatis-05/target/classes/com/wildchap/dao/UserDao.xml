@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.wildchap.dao.UserDao">
+
+    <resultMap id="UserMap01" type="User">
+        <result column="pwd" property="password"/>
+    </resultMap>
+
+    <insert id="insertIntoUser" parameterType="map">
+        insert into mybatis.user(id, name, pwd) values(#{id}, #{name}, #{pwd})
+    </insert>
+
+    <delete id="deleteFromUser" parameterType="map">
+        delete from mybatis.user where id = #{id}
+    </delete>
+
+    <update id="updateUser" parameterType="map">
+        update mybatis.user
+        set name = #{name}, pwd = #{pwd}
+        where id = #{id}
+    </update>
+
+</mapper>
