@@ -12,7 +12,7 @@ public class MyTest {
 
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
 
-        mapper.insertIntoUser(new User(1, "abc", "123"));
+        mapper.insertIntoUser(new User(1,"abc","123"));
 
         sqlSession.close();
     }
