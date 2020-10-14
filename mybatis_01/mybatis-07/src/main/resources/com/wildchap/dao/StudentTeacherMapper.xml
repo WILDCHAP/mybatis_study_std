@@ -3,11 +3,13 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
+<!--嵌套查询方式，就是一个查询中加一个查询（必须要写到一起）-->
 <mapper namespace="com.wildchap.dao.StudentMapper">
         <select id="getAllStudent" resultMap="stMapper">
                 <!--select sid, s.tid, t.name from mybatis.student s, mybatis.teacher t where s.tid = t.tid-->
                 select * from mybatis.student
         </select>
+
 
         <resultMap id="stMapper" type="Student">
             <result property="id" column="id"/>
