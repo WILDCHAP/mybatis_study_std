@@ -7,7 +7,7 @@
 <mapper namespace="com.wildchap.dao.TeacherMapper">
 
     <select id="getAllTeacher" resultMap="selectAT">
-        select t.tid tid, t.name tname, s.name sname
+        select t.tid tid, t.name tname, s.name sname, s.sid sid
         from mybatis.student s, mybatis.teacher t
         where s.tid = t.tid
     </select>
@@ -22,7 +22,7 @@
     </resultMap>
 
     <select id="getTeacherById" resultMap="selectTBI">
-        select t.tid tid, t.name tname, s.name sname
+        select t.tid tid, t.name tname, s.name sname, s.sid sid
         from mybatis.student s, mybatis.teacher t
         where s.tid = t.tid and t.tid = #{tid}
     </select>
@@ -31,6 +31,7 @@
         <result property="tid" column="tid"/>
         <result property="name" column="tname"/>
         <collection property="students" ofType="Student">
+            <result property="sid" column="sid"/>
             <result property="name" column="sname"/>
         </collection>
     </resultMap>
