@@ -32,4 +32,15 @@
         where sid = #{sid}
     </update>
 
+    <select id="selectSomeStudent" parameterType="map" resultType="Student">
+        select * from mybatis.student
+        <where>
+            sid in
+            <foreach collection="ids" item="id"
+                     open="(" close=")" separator=",">
+                #{id}
+            </foreach>
+        </where>
+    </select>
+
 </mapper>

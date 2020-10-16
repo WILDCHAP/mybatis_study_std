@@ -8,4 +8,5 @@ import java.util.Map;
 public interface StudentMapper {
     List<Student> selectStudent(Map map);
     int updateStudent(Map map);
+    List<Student> selectSomeStudent(Map map);
 }
